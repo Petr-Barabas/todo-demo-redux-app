@@ -5,6 +5,7 @@ export function saveTaskThunk(task) {
   return async function (dispatch) {
     try {
       const createdTask = await taskApi.saveTask(task);
+      console.log("Created task:", createdTask);
       if (task.id) {
         dispatch(updateTaskSuccess(createdTask));
       } else {

@@ -59,7 +59,7 @@ export default function TasksHomePage() {
           return (
             <div key={task.id}>
               {task.title}{" "}
-              <button onClick={handleDelete(task.id)}>Delete</button>
+              <button onClick={() => handleDelete(task.id)}>Delete</button>
             </div>
           );
         })}

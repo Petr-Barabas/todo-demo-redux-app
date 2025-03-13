@@ -8,6 +8,8 @@ export default function taskReducer(state = initialState.tasks, action) {
       return action.tasks;
     case types.CREATE_TASK_SUCCESS:
       return [...state, { ...action.task }]; // immutable -> ...
+    case types.DELETE_TASK_SUCCESS:
+      return state.filter(task => task.id !== action.payload);
     default:
       return state;
   }
